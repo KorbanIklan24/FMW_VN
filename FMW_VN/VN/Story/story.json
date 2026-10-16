@@ -1,0 +1,90 @@
+{
+  "settings": {
+    "title": {
+      "en": "FMW_VN Demo - After the Bell",
+      "id": "FMW_VN Demo - Setelah Bel Berbunyi"
+    },
+    "start": "opening",
+    "background_color": "#12101a",
+    "default_text_speed": 45,
+    "default_fade": 0.35,
+    "music_volume": 0.5,
+    "sound_volume": 0.8
+  },
+
+  "languages": {
+    "en": "English",
+    "id": "Indonesian"
+  },
+  "default_language": "en",
+
+  "chapters": [
+    "ch01_after_the_bell.json",
+    "ch02_the_rooftop.json"
+  ],
+
+  "variables": {
+    "asked_about_clouds": false,
+    "heard_clouds": false,
+    "roof_visits": 0,
+    "route": ""
+  },
+
+  "gallery": [
+    {
+      "id": "cg_classroom",
+      "title": { "en": "The Classroom, After the Bell", "id": "Ruang Kelas, Setelah Bel Berbunyi" },
+      "caption": { "en": "Where chapter one starts.", "id": "Tempat bab satu dimulai." },
+      "image": "classroom_after_bell",
+      "unlock": "opening"
+    },
+    {
+      "id": "cg_rooftop",
+      "title": { "en": "The Rooftop at Sunset", "id": "Atap Saat Senja" },
+      "caption": { "en": "Mika's spot, five flights up.", "id": "Tempat favorit Mika, lima lantai di atas." },
+      "image": "rooftop_sunset",
+      "unlock": { "index": 12 }
+    },
+    {
+      "id": "cg_worth_it",
+      "title": { "en": "Worth It", "id": "Layak" },
+      "caption": { "en": "The ending where she stays.", "id": "Akhir cerita saat ia tetap tinggal." },
+      "image": "worth_it",
+      "unlock": { "seen": "ending_same_place", "index": 17 }
+    },
+    {
+      "id": "cg_umbrella",
+      "title": { "en": "An Umbrella, Anyway", "id": "Payung, Bagaimanapun" },
+      "caption": { "en": "The ending where it rains.", "id": "Akhir cerita saat hujan turun." },
+      "image": "umbrella_anyway",
+      "unlock": { "seen": "ending_rain" }
+    }
+  ],
+
+  "assets": {
+    "backgrounds": {
+      "classroom": "res://VN/assets/bg/bg_classroom.png",
+      "hallway": "res://VN/assets/bg/bg_hallway.png",
+      "sunset": "res://VN/assets/bg/bg_sunset.png"
+    },
+    "cg": {
+      "classroom_after_bell": "res://VN/assets/cg/cg_classroom.png",
+      "rooftop_sunset": "res://VN/assets/cg/cg_rooftop.png",
+      "worth_it": "res://VN/assets/cg/cg_worth_it.png",
+      "umbrella_anyway": "res://VN/assets/cg/cg_rain.png"
+    },
+    "characters": {
+      "mika": "res://VN/assets/char/char_mika.png",
+      "ren": "res://VN/assets/char/char_ren.png",
+      "aoyama": "res://VN/assets/char/char_aoyama.png"
+    },
+    "music": {
+      "calm": "res://VN/assets/audio/music_calm.wav",
+      "sunset": "res://VN/assets/audio/music_sunset.wav"
+    },
+    "sounds": {
+      "blip": "res://VN/assets/audio/sfx_blip.wav",
+      "confirm": "res://VN/assets/audio/sfx_confirm.wav"
+    }
+  }
+}

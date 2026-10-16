@@ -1,0 +1,1372 @@
+[gd_scene load_steps=22 format=3]
+
+[ext_resource type="Script" path="res://Framework_VN/scripts/vn_player.gd" id="1_vnplayer"]
+[ext_resource type="Texture2D" path="res://VN/assets/ui/textbox.png" id="2_textbox"]
+[ext_resource type="Texture2D" path="res://VN/assets/ui/menu_bg.png" id="3_menu_bg"]
+[ext_resource type="Texture2D" path="res://VN/assets/ui/menu_button.png" id="4_menu_button"]
+[ext_resource type="Texture2D" path="res://VN/assets/ui/menu_button_hover.png" id="5_menu_button_hover"]
+[ext_resource type="Texture2D" path="res://VN/assets/ui/menu_button_pressed.png" id="6_menu_button_pressed"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_textbox"]
+texture = ExtResource("2_textbox")
+texture_margin_left = 48.0
+texture_margin_top = 48.0
+texture_margin_right = 48.0
+texture_margin_bottom = 48.0
+expand_margin_left = 24.0
+expand_margin_top = 24.0
+expand_margin_right = 24.0
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_button"]
+texture = ExtResource("4_menu_button")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+content_margin_left = 24.0
+content_margin_top = 14.0
+content_margin_right = 24.0
+content_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_button_hover"]
+texture = ExtResource("5_menu_button_hover")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+content_margin_left = 24.0
+content_margin_top = 14.0
+content_margin_right = 24.0
+content_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_button_pressed"]
+texture = ExtResource("6_menu_button_pressed")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+content_margin_left = 24.0
+content_margin_top = 14.0
+content_margin_right = 24.0
+content_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nameplate"]
+bg_color = Color(0.235294, 0.313726, 0.615686, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.596078, 0.717647, 1, 0.705882)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
+content_margin_left = 30.0
+content_margin_top = 16.0
+content_margin_right = 30.0
+content_margin_bottom = 16.0
+bg_color = Color(0.0784314, 0.0980392, 0.164706, 0.921569)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.596078, 0.717647, 1, 0.588235)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+content_margin_left = 30.0
+content_margin_top = 16.0
+content_margin_right = 30.0
+content_margin_bottom = 16.0
+bg_color = Color(0.152941, 0.192157, 0.313726, 0.960784)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.72549, 0.815686, 1, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_pressed"]
+content_margin_left = 30.0
+content_margin_top = 16.0
+content_margin_right = 30.0
+content_margin_bottom = 16.0
+bg_color = Color(0.235294, 0.313726, 0.615686, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0.898039, 1, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_portrait"]
+bg_color = Color(0.0392157, 0.0431373, 0.0705882, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.85098, 0.898039, 1, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_sm"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.0784314, 0.0980392, 0.164706, 0.921569)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.596078, 0.717647, 1, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_sm_hover"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.152941, 0.192157, 0.313726, 0.960784)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.72549, 0.815686, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_sm_pressed"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.235294, 0.313726, 0.615686, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0.898039, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+bg_color = Color(0.0784314, 0.0980392, 0.164706, 0.921569)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.596078, 0.717647, 1, 0.588235)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_hover"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+bg_color = Color(0.152941, 0.192157, 0.313726, 0.960784)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.72549, 0.815686, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_on"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+bg_color = Color(0.301961, 0.407843, 0.717647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0.898039, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+
+[sub_resource type="Theme" id="Theme_vn"]
+Button/colors/font_color = Color(0.941176, 0.952941, 1, 1)
+Button/colors/font_disabled_color = Color(0.470588, 0.501961, 0.588235, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.85098, 0.898039, 1, 1)
+Button/font_sizes/font_size = 32
+Button/styles/disabled = SubResource("StyleBoxFlat_btn")
+Button/styles/focus = SubResource("StyleBoxFlat_btn_hover")
+Button/styles/hover = SubResource("StyleBoxFlat_btn_hover")
+Button/styles/normal = SubResource("StyleBoxFlat_btn")
+Button/styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+
+[node name="VNScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_vn")
+script = ExtResource("1_vnplayer")
+
+[node name="World" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BgFallback" type="ColorRect" parent="World"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0627451, 0.0627451, 0.0901961, 1)
+
+[node name="Backgrounds" type="Control" parent="World"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BgA" type="TextureRect" parent="World/Backgrounds"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BgMask" type="Control" parent="World/Backgrounds"]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="BgB" type="TextureRect" parent="World/Backgrounds/BgMask"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Characters" type="Control" parent="World"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Flash" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="TransitionCurtain" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="TextBox" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = -320.0
+offset_right = -120.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_textbox")
+
+[node name="SpeakerLabel" type="Label" parent="TextBox"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = 48.0
+offset_top = -56.0
+offset_right = 468.0
+offset_bottom = 12.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_nameplate")
+text = "Speaker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PortraitFrame" type="Panel" parent="TextBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_portrait")
+
+[node name="PortraitClip" type="Control" parent="TextBox/PortraitFrame"]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 157.0
+mouse_filter = 2
+
+[node name="Portrait" type="TextureRect" parent="TextBox/PortraitFrame/PortraitClip"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextContent" type="MarginContainer" parent="TextBox"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 52
+theme_override_constants/margin_top = 46
+theme_override_constants/margin_right = 52
+theme_override_constants/margin_bottom = 40
+
+[node name="DialogueLabel" type="RichTextLabel" parent="TextBox/TextContent"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.941176, 0.941176, 0.980392, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+scroll_active = false
+
+[node name="HintLabel" type="Label" parent="TextBox"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -460.0
+offset_top = -56.0
+offset_right = -40.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.690196, 0.760784, 1, 0.25)
+theme_override_font_sizes/font_size = 26
+text = "click / space"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ChoiceHolder" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ChoiceBox" type="VBoxContainer" parent="ChoiceHolder"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 760.0
+offset_bottom = 52.0
+mouse_filter = 1
+theme_override_constants/separation = 10
+
+[node name="BookButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -205.0
+offset_top = 26.0
+offset_right = -30.0
+offset_bottom = 67.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_sm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_sm_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_sm_hover")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_sm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_sm_pressed")
+text = "Book  (B)"
+
+[node name="ToastLabel" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 40.0
+offset_right = 400.0
+offset_bottom = 108.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.937255, 0.752941, 1)
+theme_override_font_sizes/font_size = 34
+text = "Saved."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenu" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBackground" type="TextureRect" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_menu_bg")
+expand_mode = 1
+
+[node name="MenuTitle" type="Label" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 150.0
+offset_top = 96.0
+offset_right = 1000.0
+offset_bottom = 168.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.55)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 66
+text = "FMW_VN"
+
+[node name="MenuSubtitle" type="Label" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 154.0
+offset_top = 174.0
+offset_right = 1100.0
+offset_bottom = 210.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.690196, 0.760784, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "a data-driven visual novel"
+
+[node name="MenuColumn" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = -230.0
+offset_right = 690.0
+offset_bottom = 230.0
+grow_horizontal = 1
+grow_vertical = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="MenuNewGame" type="Button" parent="MainMenu/MenuColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(540, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "New game"
+
+[node name="MenuLoad" type="Button" parent="MainMenu/MenuColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(540, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "Load"
+
+[node name="MenuGallery" type="Button" parent="MainMenu/MenuColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(540, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "Gallery"
+
+[node name="MenuSettings" type="Button" parent="MainMenu/MenuColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(540, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "Settings"
+
+[node name="MenuInfo" type="Button" parent="MainMenu/MenuColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(540, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "Info"
+
+[node name="MenuCredits" type="Button" parent="MainMenu/MenuColumn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(540, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "Credits"
+
+[node name="MenuPage" type="Control" parent="MainMenu"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PageDim" type="ColorRect" parent="MainMenu/MenuPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0156863, 0.0156863, 0.0235294, 0.941176)
+
+[node name="Center" type="CenterContainer" parent="MainMenu/MenuPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PageBox" type="VBoxContainer" parent="MainMenu/MenuPage/Center"]
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="MenuPageTitle" type="Label" parent="MainMenu/MenuPage/Center/PageBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 54
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="MenuPageBody" type="RichTextLabel" parent="MainMenu/MenuPage/Center/PageBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 3
+fit_content = true
+
+[node name="MenuGalleryPage" type="VBoxContainer" parent="MainMenu/MenuPage/Center/PageBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="GalleryCount" type="Label" parent="MainMenu/MenuPage/Center/PageBox/MenuGalleryPage"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.690196, 0.760784, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "0 of 0 unlocked"
+horizontal_alignment = 1
+
+[node name="GalleryScroll" type="ScrollContainer" parent="MainMenu/MenuPage/Center/PageBox/MenuGalleryPage"]
+custom_minimum_size = Vector2(1100, 660)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="GalleryGrid" type="GridContainer" parent="MainMenu/MenuPage/Center/PageBox/MenuGalleryPage/GalleryScroll"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 18
+columns = 3
+
+[node name="MenuPageBack" type="Button" parent="MainMenu/MenuPage/Center/PageBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 66)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "Back"
+
+[node name="CreditsNote" type="Label" parent="MainMenu/MenuPage"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1500.0
+offset_top = -130.0
+offset_right = -70.0
+offset_bottom = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.760784, 0.796078, 0.878431, 1)
+theme_override_font_sizes/font_size = 26
+text = "This framework is made with AI and heavily inspired by Ren'py."
+horizontal_alignment = 2
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="GalleryViewer" type="Control" parent="MainMenu"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ViewerDim" type="ColorRect" parent="MainMenu/GalleryViewer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.00784314, 0.00784314, 0.0117647, 0.960784)
+
+[node name="ViewerImage" type="TextureRect" parent="MainMenu/GalleryViewer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 150.0
+offset_right = -160.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ViewerTitle" type="Label" parent="MainMenu/GalleryViewer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 160.0
+offset_top = 58.0
+offset_right = -160.0
+offset_bottom = 126.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+
+[node name="ViewerCaption" type="Label" parent="MainMenu/GalleryViewer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = -152.0
+offset_right = -160.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.807843, 0.843137, 0.945098, 1)
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+
+[node name="ViewerClose" type="Button" parent="MainMenu/GalleryViewer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 66)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -92.0
+offset_right = 140.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "Close  (Esc)"
+
+[node name="BookOverlay" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0156863, 0.0156863, 0.0235294, 0.941176)
+
+[node name="Content" type="MarginContainer" parent="BookOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 140
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 140
+theme_override_constants/margin_bottom = 70
+
+[node name="VBox" type="VBoxContainer" parent="BookOverlay/Content"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="TabStrip" type="VBoxContainer" parent="BookOverlay/Content/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Tabs" type="HBoxContainer" parent="BookOverlay/Content/VBox/TabStrip"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TabHistory" type="Button" parent="BookOverlay/Content/VBox/TabStrip/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_tab_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tab_hover")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tab_on")
+text = "History"
+
+[node name="TabSave" type="Button" parent="BookOverlay/Content/VBox/TabStrip/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_tab_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tab_hover")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tab_on")
+text = "Save"
+
+[node name="TabLoad" type="Button" parent="BookOverlay/Content/VBox/TabStrip/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_tab_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tab_hover")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tab_on")
+text = "Load"
+
+[node name="PageEdge" type="ColorRect" parent="BookOverlay/Content/VBox/TabStrip"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0.596078, 0.717647, 1, 0.588235)
+
+[node name="BookTitle" type="Label" parent="BookOverlay/Content/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 54
+text = "History"
+horizontal_alignment = 1
+
+[node name="HistoryPage" type="VBoxContainer" parent="BookOverlay/Content/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HistoryScroll" type="ScrollContainer" parent="BookOverlay/Content/VBox/HistoryPage"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="HistoryList" type="VBoxContainer" parent="BookOverlay/Content/VBox/HistoryPage/HistoryScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 18
+
+[node name="SlotsPage" type="VBoxContainer" parent="BookOverlay/Content/VBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SlotsMargin" type="MarginContainer" parent="BookOverlay/Content/VBox/SlotsPage"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 240
+theme_override_constants/margin_right = 240
+
+[node name="MenuSlots" type="VBoxContainer" parent="BookOverlay/Content/VBox/SlotsPage/SlotsMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="BookButtons" type="HBoxContainer" parent="BookOverlay/Content/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="BookSettings" type="Button" parent="BookOverlay/Content/VBox/BookButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 58)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+
+[node name="BookMainMenu" type="Button" parent="BookOverlay/Content/VBox/BookButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 58)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Main Menu"
+
+[node name="BookClose" type="Button" parent="BookOverlay/Content/VBox/BookButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 58)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Close  (Esc)"
+
+[node name="MusicA" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+volume_db = -80.0
+
+[node name="MusicB" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+volume_db = -80.0
+
+[node name="Sfx" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="SfxPlayer1" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="SfxPlayer2" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="SfxPlayer3" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="MessageOverlay" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0196078, 0.0196078, 0.0313726, 0.882353)
+
+[node name="Center" type="CenterContainer" parent="MessageOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="MessageOverlay/Center"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="MessageTitle" type="Label" parent="MessageOverlay/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 72
+text = "The End"
+horizontal_alignment = 1
+
+[node name="MessageBody" type="Label" parent="MessageOverlay/Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.854902, 0.870588, 0.941176, 1)
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="MessageHint" type="Label" parent="MessageOverlay/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.690196, 0.760784, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "click / space"
+horizontal_alignment = 1
+
+[node name="SettingsOverlay" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0156863, 0.0156863, 0.0235294, 0.941176)
+
+[node name="Center" type="CenterContainer" parent="SettingsOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PageBox" type="VBoxContainer" parent="SettingsOverlay/Center"]
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="SettingsTitle" type="Label" parent="SettingsOverlay/Center/PageBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 54
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="SettingsPage" type="VBoxContainer" parent="SettingsOverlay/Center/PageBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="SettingsLanguageRow" type="HBoxContainer" parent="SettingsOverlay/Center/PageBox/SettingsPage"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="SettingsLanguageLabel" type="Label" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsLanguageRow"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Language"
+vertical_alignment = 1
+
+[node name="LanguageOption" type="OptionButton" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsLanguageRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 62)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Indonesian"
+popup/item_1/id = 1
+selected = 0
+
+[node name="SettingsWritingRow" type="HBoxContainer" parent="SettingsOverlay/Center/PageBox/SettingsPage"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="SettingsWritingLabel" type="Label" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsWritingRow"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Writing speed"
+vertical_alignment = 1
+
+[node name="WritingSpeedSlider" type="HSlider" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsWritingRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.25
+max_value = 8.0
+step = 0.25
+value = 1.0
+
+[node name="WritingSpeedValue" type="Label" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsWritingRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.807843, 0.843137, 0.945098, 1)
+theme_override_font_sizes/font_size = 30
+text = "1x"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SettingsFastRow" type="HBoxContainer" parent="SettingsOverlay/Center/PageBox/SettingsPage"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="SettingsFastLabel" type="Label" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsFastRow"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Fast-forward speed"
+vertical_alignment = 1
+
+[node name="FastWritingSpeedSlider" type="HSlider" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsFastRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 16.0
+step = 1.0
+value = 4.0
+
+[node name="FastWritingSpeedValue" type="Label" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsFastRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.807843, 0.843137, 0.945098, 1)
+theme_override_font_sizes/font_size = 30
+text = "4x"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SettingsAutoRow" type="HBoxContainer" parent="SettingsOverlay/Center/PageBox/SettingsPage"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="SettingsAutoLabel" type="Label" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsAutoRow"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Auto-forward formula"
+vertical_alignment = 1
+
+[node name="AutoForwardSlider" type="HSlider" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsAutoRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 0.5
+step = 0.01
+value = 0.05
+
+[node name="AutoForwardValue" type="Label" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsAutoRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.807843, 0.843137, 0.945098, 1)
+theme_override_font_sizes/font_size = 30
+text = "0.05 s/char"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SettingsScreenRow" type="HBoxContainer" parent="SettingsOverlay/Center/PageBox/SettingsPage"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="SettingsScreenLabel" type="Label" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsScreenRow"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Screen mode"
+vertical_alignment = 1
+
+[node name="ScreenModeOption" type="OptionButton" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsScreenRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 62)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Maximize"
+popup/item_1/id = 1
+popup/item_2/text = "Full screen"
+popup/item_2/id = 2
+selected = 0
+
+[node name="SettingsVolumeRow" type="HBoxContainer" parent="SettingsOverlay/Center/PageBox/SettingsPage"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="SettingsVolumeLabel" type="Label" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsVolumeRow"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Master volume"
+vertical_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsVolumeRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MasterVolumeValue" type="Label" parent="SettingsOverlay/Center/PageBox/SettingsPage/SettingsVolumeRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.807843, 0.843137, 0.945098, 1)
+theme_override_font_sizes/font_size = 30
+text = "100%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SettingsNote" type="Label" parent="SettingsOverlay/Center/PageBox/SettingsPage"]
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.760784, 0.796078, 0.878431, 1)
+theme_override_font_sizes/font_size = 24
+text = "Writing speeds multiply every line's own text_speed, so a line set to print at once still does. Auto-forward holds a finished line for the chosen time per drawn character, plus the {w=...} pauses it uses. Master volume scales the story's own music and sound levels; 0% is silence, 100% leaves them exactly as written."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SettingsBack" type="Button" parent="SettingsOverlay/Center/PageBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 66)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "Back  (Esc)"
+
+[node name="QuitOverlay" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00784314, 0.00784314, 0.0117647, 0.898039)
+
+[node name="Center" type="CenterContainer" parent="QuitOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="QuitOverlay/Center"]
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="QuitTitle" type="Label" parent="QuitOverlay/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 54
+text = "Leave the game?"
+horizontal_alignment = 1
+
+[node name="QuitHint" type="Label" parent="QuitOverlay/Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.760784, 0.796078, 0.878431, 1)
+theme_override_font_sizes/font_size = 26
+text = "Exit game closes the game. Main menu keeps this story where it is. Esc cancels."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="QuitButtons" type="HBoxContainer" parent="QuitOverlay/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="QuitExitGame" type="Button" parent="QuitOverlay/Center/VBox/QuitButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "Exit game"
+
+[node name="QuitMainMenu" type="Button" parent="QuitOverlay/Center/VBox/QuitButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "Main menu"
+
+[node name="QuitCancel" type="Button" parent="QuitOverlay/Center/VBox/QuitButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_button_hover")
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_button_pressed")
+text = "Cancel  (Esc)"
+

@@ -1,0 +1,108 @@
+{
+  "slides": [
+    {
+      "id": "opening",
+      "background": "classroom",
+      "bgm": "calm",
+      "text": "The last bell rings. Afternoon light slides across a room full of empty desks.",
+      "next": "mika_appears"
+    },
+    {
+      "id": "mika_appears",
+      "characters": [
+        { "id": "mika", "image": "mika", "position": "right" }
+      ],
+      "sfx": "blip",
+      "speaker": "Mika",
+      "text": "There you are! I checked [b]every[/b] hallway in this school.",
+      "next": "ren_appears"
+    },
+    {
+      "id": "ren_appears",
+      "characters": [
+        { "id": "ren", "image": "ren", "position": "left", "tint": "#c8d8ff" },
+        { "id": "mika", "image": "mika", "position": "right" }
+      ],
+      "speaker": "Ren",
+      "text": "Sorry. I was watching the clouds move.",
+      "next": "mika_teases"
+    },
+    {
+      "id": "mika_teases",
+      "speaker": "Mika",
+      "text": "Clouds! The festival starts in an hour and you are watching [i]clouds[/i].",
+      "effects": [
+        { "type": "pulse", "strength": 0.05, "duration": 0.4 }
+      ],
+      "set": { "asked_about_clouds": true },
+      "next": "to_hallway"
+    },
+    {
+      "id": "to_hallway",
+      "background": "hallway",
+      "transition": "wipe_left",
+      "sfx": "blip",
+      "wait": 0.9,
+      "next": "ren_asks"
+    },
+    {
+      "id": "ren_asks",
+      "speaker": "Ren",
+      "text": "...You are both coming,{w=0.4} right?",
+      "next": "ren_slips_away"
+    },
+    {
+      "id": "ren_slips_away",
+      "hide": ["ren"],
+      "with": "dissolve",
+      "text": "Ren ducks out of frame to fetch his bag from the classroom.",
+      "next": "ren_back"
+    },
+    {
+      "id": "ren_back",
+      "show": [
+        { "id": "ren", "image": "ren", "position": "left", "tint": "#c8d8ff" }
+      ],
+      "with": "dissolve",
+      "speaker": "Ren",
+      "text": "Found it. So - the roof?",
+      "next": "the_way_up"
+    },
+    {
+      "id": "the_way_up",
+      "speaker": "Mika",
+      "text": "Depends. How are we getting up to the roof?",
+      "choices": [
+        { "text": "Take the stairs, like a normal person.", "next": "stairs", "sfx": "confirm" },
+        { "text": "Climb out of the music room window.", "next": "window", "sfx": "confirm" },
+        { "text": "Hold on - what were you doing up on the roof?", "next": "clouds_answer", "if": "asked_about_clouds and not heard_clouds", "sfx": "confirm" }
+      ]
+    },
+    {
+      "id": "clouds_answer",
+      "speaker": "Ren",
+      "text": "Watching the clouds,{w=0.3} remember? I already told you both.",
+      "set": { "heard_clouds": true },
+      "next": "the_way_up"
+    },
+    {
+      "id": "stairs",
+      "text": "We take the stairs. Least dramatic, and the only door that is actually unlocked.",
+      "set": { "route": "stairs" },
+      "next": "rooftop_arrival"
+    },
+    {
+      "id": "window",
+      "characters": [
+        { "id": "ren", "image": "ren", "position": "left", "scale": 0.6, "vertical": "middle", "tint": "#c8d8ff" },
+        { "id": "mika", "image": "mika", "position": "right" }
+      ],
+      "text": "We climb out of the music room window, which is technically not a door at all.",
+      "effects": [
+        { "type": "shake", "strength": 16, "duration": 0.5 }
+      ],
+      "set": { "route": "window" },
+      "next": "rooftop_arrival"
+    }
+  ]
+}

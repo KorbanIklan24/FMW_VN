@@ -1,0 +1,46 @@
+{
+  "slides": [
+    {
+      "id": "rooftop_arrival"
+    },
+    {
+      "id": "mika_promises",
+      "speaker": "Mika",
+      "text": "Layak. Lihat langitnya."
+    },
+    {
+      "id": "route_thought",
+      "text": "Keluar lewat jendela lalu naik tangga darurat. Lecet di lengan Ren akan jadi cerita besok."
+    },
+    {
+      "id": "quiet_moment",
+      "text": "Untuk sementara tak ada yang bicara. Kota berdengung tiga lantai di bawah kami."
+    },
+    {
+      "id": "last_question",
+      "speaker": "Ren",
+      "text": "Jadi...{w=0.5} besok jam yang sama?",
+      "choices": [
+        { "text": "Tentu." },
+        { "text": "Kalau tidak hujan." },
+        { "text": "Jadi ini tradisi sekarang?" }
+      ]
+    },
+    {
+      "id": "ending_same_place",
+      "speaker": "Mika",
+      "text": "Tentu. Tempat yang sama. [b]Bahkan kalau hujan.[/b]"
+    },
+    {
+      "id": "curtain_same_place"
+    },
+    {
+      "id": "ending_rain",
+      "speaker": "Ren",
+      "text": "Kalau begitu aku bawa payung, dan tetap berdiri di sini."
+    },
+    {
+      "id": "curtain_rain"
+    }
+  ]
+}

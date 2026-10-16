@@ -1,0 +1,63 @@
+{
+  "slides": [
+    {
+      "id": "opening",
+      "text": "Bel terakhir berbunyi. Cahaya sore menyusur ruang kelas yang penuh meja kosong."
+    },
+    {
+      "id": "mika_appears",
+      "speaker": "Mika",
+      "text": "Rupanya kau di sini! Aku sudah menyusuri [b]semua[/b] koridor di sekolah ini."
+    },
+    {
+      "id": "ren_appears",
+      "speaker": "Ren",
+      "text": "Maaf. Aku sedang melihat awan berjalan."
+    },
+    {
+      "id": "mika_teases",
+      "speaker": "Mika",
+      "text": "Awan! Festivalnya mulai satu jam lagi, dan kau malah menonton [i]awan[/i]."
+    },
+    {
+      "id": "to_hallway"
+    },
+    {
+      "id": "ren_asks",
+      "speaker": "Ren",
+      "text": "...Kalian berdua ikut,{w=0.4} kan?"
+    },
+    {
+      "id": "ren_slips_away",
+      "text": "Ren keluar dari ruang gambar untuk mengambil tasnya di kelas."
+    },
+    {
+      "id": "ren_back",
+      "speaker": "Ren",
+      "text": "Ketemu. Jadi - ke atap?"
+    },
+    {
+      "id": "the_way_up",
+      "speaker": "Mika",
+      "text": "Tergantung. Kita naik ke atap lewat mana?",
+      "choices": [
+        { "text": "Lewat tangga, seperti orang normal." },
+        { "text": "Keluar lewat jendela ruang musik." },
+        { "text": "Tunggu - sebenarnya kalian ngapain di atap?" }
+      ]
+    },
+    {
+      "id": "clouds_answer",
+      "speaker": "Ren",
+      "text": "Melihat awan,{w=0.3} ingat? Aku sudah bilang ke kalian berdua."
+    },
+    {
+      "id": "stairs",
+      "text": "Kami lewat tangga. Paling tidak dramatis, dan satu-satunya pintu yang memang tidak terkunci."
+    },
+    {
+      "id": "window",
+      "text": "Kami keluar lewat jendela ruang musik, yang secara teknis sama sekali bukan pintu."
+    }
+  ]
+}

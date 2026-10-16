@@ -1,0 +1,83 @@
+{
+  "slides": [
+    {
+      "id": "rooftop_arrival",
+      "background": "sunset",
+      "transition": { "type": "fade_black", "duration": 1.0 },
+      "bgm": "sunset",
+      "characters": [
+        { "id": "ren", "image": "ren", "position": "bottom-left", "tint": "#c8d8ff" },
+        { "id": "mika", "image": "mika", "position": "bottom-right" }
+      ],
+      "wait": 0.6,
+      "set": { "roof_visits": { "expr": "roof_visits + 1" } },
+      "next": "mika_promises"
+    },
+    {
+      "id": "mika_promises",
+      "speaker": "Mika",
+      "text": "Worth it. Look at that sky.",
+      "text_speed": 30,
+      "effects": [
+        { "type": "zoom", "from": 1.0, "to": 1.06, "duration": 2.5 }
+      ],
+      "next": "route_thought"
+    },
+    {
+      "id": "route_thought",
+      "if": "route == \"window\"",
+      "text": "Out the window and up the fire escape. The scratch on Ren's arm is going to be a story by tomorrow.",
+      "next": "quiet_moment"
+    },
+    {
+      "id": "quiet_moment",
+      "portrait": "mika",
+      "text": "For a while nobody says anything. The city hums three floors below us.",
+      "auto": true,
+      "next": "last_question"
+    },
+    {
+      "id": "last_question",
+      "speaker": "Ren",
+      "text": "So...{w=0.5} same time tomorrow?",
+      "effects": [
+        { "type": "reset" }
+      ],
+      "choices": [
+        { "text": "Of course.", "next": "ending_same_place", "sfx": "confirm" },
+        { "text": "Only if it does not rain.", "next": "ending_rain", "sfx": "confirm" },
+        { "text": "Is this a tradition now?", "next": "ending_same_place", "if": "roof_visits == 1", "sfx": "confirm" }
+      ]
+    },
+    {
+      "id": "ending_same_place",
+      "speaker": "Mika",
+      "text": "Of course. Same place. [b]Even if it rains.[/b]",
+      "effects": [
+        { "type": "flash", "color": "#ffe9b0", "duration": 0.9 }
+      ],
+      "next": "curtain_same_place"
+    },
+    {
+      "id": "curtain_same_place",
+      "bgm": "stop",
+      "wait": 1.6,
+      "next": null
+    },
+    {
+      "id": "ending_rain",
+      "speaker": "Ren",
+      "text": "Then I will bring an umbrella, and stand here anyway.",
+      "effects": [
+        { "type": "flash", "color": "#c8d8ff", "duration": 0.9 }
+      ],
+      "next": "curtain_rain"
+    },
+    {
+      "id": "curtain_rain",
+      "bgm": "stop",
+      "wait": 1.6,
+      "next": null
+    }
+  ]
+}
